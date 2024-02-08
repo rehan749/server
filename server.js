@@ -18,7 +18,7 @@ mongoose.connect(uri)
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 
-var corsOptions = {
+const corsOptions = {
     origin: 'http://localhost:3000',
     method: 'GET, POST, DELETE, PUT, PATCH, HEAD',
     credential:true,
