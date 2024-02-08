@@ -5,7 +5,7 @@ const home = async (req, res) => {
     try {
         res.status(200).send("welcome to home page");
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 //  user registration logic 
@@ -21,7 +21,8 @@ const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const userCreated = await User.create({ name, email, number, password: hashedPassword });
-        res.status(200).json({ success: true, data: userCreated, token: await userCreated.genrateToken() });
+        res.status(200).json({ success: true, data: userCreated});
+        // res.status(200).json({ success: true, data: userCreated, token: await userCreated.genrateToken() });
 
 
     } catch (error) {
